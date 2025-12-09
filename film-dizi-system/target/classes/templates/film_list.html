@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Film Listesi</title>
+</head>
+<body>
+<h1>Film Listesi</h1>
+
+<a href="/film/add">Yeni Film Ekle</a>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Yıl</th>
+        <th>Ülke</th>
+        <th>Dil</th>
+        <th>Süre</th>
+        <th>Bütçe</th>
+        <th>İşlemler</th>
+    </tr>
+
+    <tr th:each="film : ${films}">
+        <td th:text="${film.id}"></td>
+        <td th:text="${film.title}"></td>
+        <td th:text="${film.releaseYear}"></td>
+        <td th:text="${film.country}"></td>
+        <td th:text="${film.language}"></td>
+        <td th:text="${film.runtimeMinutes}"></td>
+        <td th:text="${film.budgetUsd}"></td>
+
+        <td>
+            <a th:href="@{'/film/edit/' + ${film.id}}">Düzenle</a> |
+            <a th:href="@{'/film/delete/' + ${film.id}}">Sil</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

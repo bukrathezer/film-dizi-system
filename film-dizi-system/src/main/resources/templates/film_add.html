@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yeni Film Ekle</title>
+</head>
+<body>
+<h1>Yeni Film Ekle</h1>
+
+<form action="/film/add" method="post" th:object="${film}">
+
+    ID: <input type="text" th:field="*{id}" /><br><br>
+    Başlık: <input type="text" th:field="*{title}" /><br><br>
+    Yıl: <input type="text" th:field="*{releaseYear}" /><br><br>
+    Ülke: <input type="text" th:field="*{country}" /><br><br>
+    Dil: <input type="text" th:field="*{language}" /><br><br>
+    Süre: <input type="text" th:field="*{runtimeMinutes}" /><br><br>
+    Bütçe: <input type="text" th:field="*{budgetUsd}" /><br><br>
+
+    <button type="submit">Kaydet</button>
+</form>
+
+<a href="/film/list">Geri Dön</a>
+
+</body>
+</html>
