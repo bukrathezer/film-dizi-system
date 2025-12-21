@@ -58,4 +58,15 @@ public class FilmController {
         filmService.deleteFilm(id);
         return "redirect:/film/list";
     }
+    @GetMapping("/hello")
+    @ResponseBody
+    public String hello() { return "HELLO"; }
+
+    @GetMapping("/test-view")
+    public String testView() {
+        return "test";
+    }
+    
+    
+
 }
